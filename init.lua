@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugin setup
 require("lazy").setup({
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "projekt0n/github-nvim-theme", name = "github-theme"},
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope.nvim",
 	"neovim/nvim-lspconfig",
@@ -31,7 +32,7 @@ require("lazy").setup({
 })
 
 -- Theme setup
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "github_dark"
 
 -- LSP and Mason setup
 require("mason").setup()
