@@ -14,3 +14,6 @@ Designed to work with javascript and typescript currently.
 - Visual mode: tab/shift+tab Change indentation
 - gcc/gc Toggle line comment
 - gbc/gb Toggle block comment
+
+## Credits
+- https://github.com/D3Ext/aesthetic-wallpapers/tree/main
