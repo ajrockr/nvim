@@ -36,10 +36,14 @@ vim.cmd.colorscheme "github_dark"
 
 -- LSP and Mason setup
 require("mason").setup()
-require("mason-lspconfig").setup({ ensure_installed = { "ts_ls" } })
+require("mason-lspconfig").setup({ ensure_installed = { "ts_ls", "phpactor", "html", "cssls", "omnisharp", "clangd", "rust_analyzer", "powershell_es", "bashls" } })
 
 local lspconfig = require("lspconfig")
-
+local servers = { "ts_ls", "phpactor", "html", "cssls", "omnisharp", "clangd", "rust_analyzer", "powershell_es", "bashls" }
+for _, server in ipairs(servers) do
+    lspconfig[server].setup({})
+end
+--[[ 
 lspconfig.ts_ls.setup({
   on_attach = function(client, bufnr)
     -- Linting with eslint using nvim-lint
@@ -71,10 +75,10 @@ lspconfig.ts_ls.setup({
     })
   end,
 })
-
+ ]]
 -- Treesitter setup
 require("nvim-treesitter.configs").setup({
-  ensure_installed = { "javascript", "typescript", "html", "css", "lua" },
+  ensure_installed = { "javascript", "typescript", "php", "html", "css", "c_sharp", "cpp", "rust", "bash", "lua" },
   highlight = { enable = true },
   incremental_selection = {
     enable = true,
